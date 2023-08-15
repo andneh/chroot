@@ -1,0 +1,7 @@
+#! /usr/bin/sh
+mount -t devtmpfs none /dev;
+mount -t proc p /proc;
+mount -t sysfs none /sys;
+modprobe -v ahci;
+echo "Hello world";
+exec /bin/login;
