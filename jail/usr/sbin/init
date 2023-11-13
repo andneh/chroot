@@ -1,0 +1,35 @@
+#! /usr/bin/sh
+
+# Unix share resourse
+mkdir -p /usr/bin
+mkdir -p /usr/sbin
+
+# Host dependent
+mkdir -p /etc
+mkdir -p /var
+
+# User home
+mkdir -p /home
+
+# VFS
+mkdir -p /proc
+mkdir -p /dev
+mkdir -p /sys
+
+# USR Links
+ln -s /usr/bin/ /bin;
+ln -s /usr/sbin/ /sbin;
+
+# VFS
+mount -t devtmpfs none /dev;
+mount -t proc none /proc;
+mount -t sysfs none /sys;
+
+# Logs
+echo "Hello world";
+
+# Setup busybox links
+# TODO
+
+# Exec busy box init system
+exec /usr/bin/init;
