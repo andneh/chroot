@@ -1,3 +1,3 @@
 #! /usr/bin/sh
 # TODO add unshare udev for tty1
-unshare -p -f chroot ./jail ./init;
+unshare -p -f chroot ./jail /usr/sbin/init;
